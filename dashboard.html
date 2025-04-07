@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextAdmin - Dashboard</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Component -->
+        <div id="sidebarContainer"></div>
+        
+        <div class="content-wrapper">
+            <!-- Header Component -->
+            <div id="headerContainer"></div>
+            
+            <main class="main-content">
+                <div class="page-header">
+                    <h1>Dashboard</h1>
+                    <div class="page-actions">
+                        <button class="action-btn">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>Last 30 days</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <button class="action-btn primary">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Download Report</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(99, 102, 241, 0.1);">
+                            <i class="fa-solid fa-message" style="color: #6366f1;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Total Conversations</p>
+                            <h3 class="stat-value">24,531</h3>
+                            <p class="stat-change increase">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                <span>12.5%</span> from last month
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(16, 185, 129, 0.1);">
+                            <i class="fa-solid fa-users" style="color: #10b981;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Active Users</p>
+                            <h3 class="stat-value">3,642</h3>
+                            <p class="stat-change increase">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                <span>8.2%</span> from last month
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(249, 115, 22, 0.1);">
+                            <i class="fa-solid fa-bolt" style="color: #f97316;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Response Rate</p>
+                            <h3 class="stat-value">98.4%</h3>
+                            <p class="stat-change increase">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                <span>1.2%</span> from last month
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(236, 72, 153, 0.1);">
+                            <i class="fa-solid fa-clock" style="color: #ec4899;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Avg. Response Time</p>
+                            <h3 class="stat-value">1.2s</h3>
+                            <p class="stat-change decrease">
+                                <i class="fa-solid fa-arrow-down"></i>
+                                <span>0.3s</span> from last month
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-charts">
+                    <div class="chart-card large">
+                        <div class="card-header">
+                            <h3>Conversation Analytics</h3>
+                            <div class="card-actions">
+                                <button class="card-action-btn active">Daily</button>
+                                <button class="card-action-btn">Weekly</button>
+                                <button class="card-action-btn">Monthly</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="placeholder-chart" id="conversationsChart">
+                                <!-- Chart will be rendered by JS -->
+                                <div class="chart-placeholder">
+                                    <div class="line-chart-placeholder"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card medium">
+                        <div class="card-header">
+                            <h3>Popular Topics</h3>
+                            <div class="card-actions">
+                                <button class="card-action-btn">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="placeholder-chart" id="topicsChart">
+                                <!-- Chart will be rendered by JS -->
+                                <div class="chart-placeholder">
+                                    <div class="donut-chart-placeholder"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card medium">
+                        <div class="card-header">
+                            <h3>User Satisfaction</h3>
+                            <div class="card-actions">
+                                <button class="card-action-btn">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="satisfaction-metrics">
+                            <div class="satisfaction-item">
+                                <div class="satisfaction-info">
+                                    <span class="satisfaction-label">Excellent</span>
+                                    <span class="satisfaction-value">68%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 68%; background-color: #10b981;"></div>
+                                </div>
+                            </div>
+                            <div class="satisfaction-item">
+                                <div class="satisfaction-info">
+                                    <span class="satisfaction-label">Good</span>
+                                    <span class="satisfaction-value">22%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 22%; background-color: #6366f1;"></div>
+                                </div>
+                            </div>
+                            <div class="satisfaction-item">
+                                <div class="satisfaction-info">
+                                    <span class="satisfaction-label">Average</span>
+                                    <span class="satisfaction-value">7%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 7%; background-color: #f97316;"></div>
+                                </div>
+                            </div>
+                            <div class="satisfaction-item">
+                                <div class="satisfaction-info">
+                                    <span class="satisfaction-label">Poor</span>
+                                    <span class="satisfaction-value">3%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 3%; background-color: #ef4444;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-tables">
+                    <div class="table-card">
+                        <div class="card-header">
+                            <h3>Recent Conversations</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Bot</th>
+                                        <th>Time</th>
+                                        <th>Duration</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="user-cell">
+                                                <img src="images/user1.png" alt="User">
+                                                <span>Sarah Johnson</span>
+                                            </div>
+                                        </td>
+                                        <td>Sales Assistant</td>
+                                        <td>10:42 AM</td>
+                                        <td>4m 32s</td>
+                                        <td><span class="status-badge completed">Completed</span></td>
+                                        <td>
+                                            <button class="table-action-btn">
+                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="user-cell">
+                                                <img src="images/user2.png" alt="User">
+                                                <span>Robert Chen</span>
+                                            </div>
+                                        </td>
+                                        <td>Support Bot</td>
+                                        <td>9:37 AM</td>
+                                        <td>2m 15s</td>
+                                        <td><span class="status-badge completed">Completed</span></td>
+                                        <td>
+                                            <button class="table-action-btn">
+                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="user-cell">
+                                                <img src="images/user3.png" alt="User">
+                                                <span>Emma Davis</span>
+                                            </div>
+                                        </td>
+                                        <td>Marketing Bot</td>
+                                        <td>8:54 AM</td>
+                                        <td>7m 48s</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>
+                                            <button class="table-action-btn">
+                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="user-cell">
+                                                <img src="images/user4.png" alt="User">
+                                                <span>Michael Brown</span>
+                                            </div>
+                                        </td>
+                                        <td>HR Assistant</td>
+                                        <td>Yesterday</td>
+                                        <td>3m 22s</td>
+                                        <td><span class="status-badge completed">Completed</span></td>
+                                        <td>
+                                            <button class="table-action-btn">
+                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script src="js/common.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

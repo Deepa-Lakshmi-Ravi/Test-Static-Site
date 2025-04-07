@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextAdmin - AI Bots</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/bots.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Component -->
+        <div id="sidebarContainer"></div>
+        
+        <div class="content-wrapper">
+            <!-- Header Component -->
+            <div id="headerContainer"></div>
+            
+            <main class="main-content">
+                <div class="page-header">
+                    <h1>AI Bots</h1>
+                    <div class="page-actions">
+                        <button class="action-btn">
+                            <i class="fa-solid fa-filter"></i>
+                            <span>Filter</span>
+                        </button>
+                        <button class="action-btn primary">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Create Bot</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bots-grid">
+                    <div class="bot-card">
+                        <div class="bot-header">
+                            <div class="bot-icon" style="background-color: rgba(99, 102, 241, 0.1);">
+                                <i class="fa-solid fa-headset" style="color: #6366f1;"></i>
+                            </div>
+                            <div class="bot-status online"></div>
+                            <button class="bot-menu">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="bot-body">
+                            <h3 class="bot-name">Customer Support</h3>
+                            <p class="bot-description">Handles customer inquiries and support tickets</p>
+                            <div class="bot-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">98%</span>
+                                    <span class="metric-label">Accuracy</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">4,822</span>
+                                    <span class="metric-label">Chats</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bot-footer">
+                            <button class="bot-action-btn">
+                                <i class="fa-solid fa-sliders"></i>
+                                <span>Configure</span>
+                            </button>
+                            <button class="bot-action-btn primary">
+                                <i class="fa-solid fa-message"></i>
+                                <span>Test Chat</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bot-card">
+                        <div class="bot-header">
+                            <div class="bot-icon" style="background-color: rgba(16, 185, 129, 0.1);">
+                                <i class="fa-solid fa-cart-shopping" style="color: #10b981;"></i>
+                            </div>
+                            <div class="bot-status online"></div>
+                            <button class="bot-menu">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="bot-body">
+                            <h3 class="bot-name">Sales Assistant</h3>
+                            <p class="bot-description">Guides customers through the sales process</p>
+                            <div class="bot-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">43%</span>
+                                    <span class="metric-label">Conversion</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">3,157</span>
+                                    <span class="metric-label">Chats</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bot-footer">
+                            <button class="bot-action-btn">
+                                <i class="fa-solid fa-sliders"></i>
+                                <span>Configure</span>
+                            </button>
+                            <button class="bot-action-btn primary">
+                                <i class="fa-solid fa-message"></i>
+                                <span>Test Chat</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bot-card">
+                        <div class="bot-header">
+                            <div class="bot-icon" style="background-color: rgba(249, 115, 22, 0.1);">
+                                <i class="fa-solid fa-briefcase" style="color: #f97316;"></i>
+                            </div>
+                            <div class="bot-status offline"></div>
+                            <button class="bot-menu">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="bot-body">
+                            <h3 class="bot-name">HR Assistant</h3>
+                            <p class="bot-description">Answers employee questions about policies</p>
+                            <div class="bot-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">97%</span>
+                                    <span class="metric-label">Accuracy</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">945</span>
+                                    <span class="metric-label">Chats</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bot-footer">
+                            <button class="bot-action-btn">
+                                <i class="fa-solid fa-sliders"></i>
+                                <span>Configure</span>
+                            </button>
+                            <button class="bot-action-btn primary">
+                                <i class="fa-solid fa-message"></i>
+                                <span>Test Chat</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bot-card">
+                        <div class="bot-header">
+                            <div class="bot-icon" style="background-color: rgba(236, 72, 153, 0.1);">
+                                <i class="fa-solid fa-bullhorn" style="color: #ec4899;"></i>
+                            </div>
+                            <div class="bot-status online"></div>
+                            <button class="bot-menu">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="bot-body">
+                            <h3 class="bot-name">Marketing Bot</h3>
+                            <p class="bot-description">Engages with customers about promotions</p>
+                            <div class="bot-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">38%</span>
+                                    <span class="metric-label">Engagement</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">2,654</span>
+                                    <span class="metric-label">Chats</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bot-footer">
+                            <button class="bot-action-btn">
+                                <i class="fa-solid fa-sliders"></i>
+                                <span>Configure</span>
+                            </button>
+                            <button class="bot-action-btn primary">
+                                <i class="fa-solid fa-message"></i>
+                                <span>Test Chat</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bot-card">
+                        <div class="bot-header">
+                            <div class="bot-icon" style="background-color: rgba(79, 70, 229, 0.1);">
+                                <i class="fa-solid fa-calendar" style="color: #4f46e5;"></i>
+                            </div>
+                            <div class="bot-status online"></div>
+                            <button class="bot-menu">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="bot-body">
+                            <h3 class="bot-name">Scheduling Bot</h3>
+                            <p class="bot-description">Helps manage appointments and meetings</p>
+                            <div class="bot-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">99%</span>
+                                    <span class="metric-label">Accuracy</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">1,842</span>
+                                    <span class="metric-label">Chats</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bot-footer">
+                            <button class="bot-action-btn">
+                                <i class="fa-solid fa-sliders"></i>
+                                <span>Configure</span>
+                            </button>
+                            <button class="bot-action-btn primary">
+                                <i class="fa-solid fa-message"></i>
+                                <span>Test Chat</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bot-card new-bot">
+                        <div class="new-bot-content">
+                            <div class="new-bot-icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <h3>Create New Bot</h3>
+                            <p>Build a custom AI bot for your specific needs</p>
+                            <button class="new-bot-btn">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script src="js/common.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/bots.js"></script>
+</body>
+</html>

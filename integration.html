@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextAdmin - Integrations</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/integrations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Component -->
+        <div id="sidebarContainer"></div>
+        
+        <div class="content-wrapper">
+            <!-- Header Component -->
+            <div id="headerContainer"></div>
+            
+            <main class="main-content">
+                <div class="page-header">
+                    <h1>Integrations</h1>
+                    <div class="page-actions">
+                        <button class="action-btn">
+                            <i class="fa-solid fa-filter"></i>
+                            <span>Filter</span>
+                        </button>
+                        <button class="action-btn primary">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Add Integration</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="integration-categories">
+                    <button class="category-btn active">All</button>
+                    <button class="category-btn">Communication</button>
+                    <button class="category-btn">Analytics</button>
+                    <button class="category-btn">CRM</button>
+                    <button class="category-btn">E-commerce</button>
+                    <button class="category-btn">APIs</button>
+                </div>
+                
+                <div class="integrations-grid">
+                    <div class="integration-card connected">
+                        <div class="integration-logo">
+                            <img src="images/slack-logo.png" alt="Slack">
+                        </div>
+                        <div class="integration-info">
+                            <h3>Slack</h3>
+                            <p>Connect your AI bots to Slack channels</p>
+                            <div class="integration-status">
+                                <span class="status-indicator"></span>
+                                <span class="status-text">Connected</span>
+                            </div>
+                        </div>
+                        <div class="integration-actions">
+                            <button class="integration-btn">Configure</button>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-card connected">
+                        <div class="integration-logo">
+                            <img src="images/zendesk-logo.png" alt="Zendesk">
+                        </div>
+                        <div class="integration-info">
+                            <h3>Zendesk</h3>
+                            <p>Integrate with your customer support platform</p>
+                            <div class="integration-status">
+                                <span class="status-indicator"></span>
+                                <span class="status-text">Connected</span>
+                            </div>
+                        </div>
+                        <div class="integration-actions">
+                            <button class="integration-btn">Configure</button>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-card">
+                        <div class="integration-logo">
+                            <img src="images/salesforce-logo.png" alt="Salesforce">
+                        </div>
+                        <div class="integration-info">
+                            <h3>Salesforce</h3>
+                            <p>Connect your bots with your CRM system</p>
+                            <div class="integration-status not-connected">
+                                <span class="status-text">Not Connected</span>
+                            </div>
+                        </div>
+                        <div class="integration-actions">
+                            <button class="integration-btn primary">Connect</button>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-card">
+                        <div class="integration-logo">
+                            <img src="images/shopify-logo.png" alt="Shopify">
+                        </div>
+                        <div class="integration-info">
+                            <h3>Shopify</h3>
+                            <p>Enhance your e-commerce store with AI</p>
+                            <div class="integration-status not-connected">
+                                <span class="status-text">Not Connected</span>
+                            </div>
+                        </div>
+                        <div class="integration-actions">
+                            <button class="integration-btn primary">Connect</button>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-card">
+                        <div class="integration-logo">
+                            <img src="images/ga-logo.png" alt="Google Analytics">
+                        </div>
+                        <div class="integration-info">
+                            <h3>Google Analytics</h3>
+                            <p>Track AI bot performance with analytics</p>
+                            <div class="integration-status not-connected">
+                                <span class="status-text">Not Connected</span>
+                            </div>
+                        </div>
+                        <div class="integration-actions">
+                            <button class="integration-btn primary">Connect</button>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-card connected">
+                        <div class="integration-logo">
+                            <img src="images/intercom-logo.png" alt="Intercom">
+                        </div>
+                        <div class="integration-info">
+                            <h3>Intercom</h3>
+                            <p>Add AI capabilities to your live chat</p>
+                            <div class="integration-status">
+                                <span class="status-indicator"></span>
+                                <span class="status-text">Connected</span>
+                            </div>
+                        </div>
+                        <div class="integration-actions">
+                            <button class="integration-btn">Configure</button>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-card">
+                        <div class="integration-logo">
+                            <img src="images/hubspot-logo.png" alt="HubSpot">
+                        </div>
+                        <div class="integration-info">
+                            <h3>HubSpot</h3>
+                            <p>Connect with your marketing automation</p>
+                            <div class="integration-status not-connected">
+                                <span class="status-text">Not Connected</span>
+                            </div>
+                        </div>
+                        <div class="integration-actions">
+                            <button class="integration-btn primary">Connect</button>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-card">
+                        <div class="integration-logo">
+                            <img src="images/zapier-logo.png" alt="Zapier">
+                        </div>
+                        <div class="integration-info">
+                            <h3>Zapier</h3>
+                            <p>Connect with 3,000+ apps and automate workflows</p>
+                            <div class="integration-status not-connected">
+                                <span class="status-text">Not Connected</span>
+                            </div>
+                        </div>
+                        <div class="integration-actions">
+                            <button class="integration-btn primary">Connect</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script src="js/common.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/integrations.js"></script>
+</body>
+</html>

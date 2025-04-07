@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextAdmin - Reports</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/reports.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Component -->
+        <div id="sidebarContainer"></div>
+        
+        <div class="content-wrapper">
+            <!-- Header Component -->
+            <div id="headerContainer"></div>
+            
+            <main class="main-content">
+                <div class="page-header">
+                    <h1>Reports</h1>
+                    <div class="page-actions">
+                        <button class="action-btn">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>Last 30 days</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fa-solid fa-share"></i>
+                            <span>Share</span>
+                        </button>
+                        <button class="action-btn primary">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Export</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="reports-filters">
+                    <div class="filter-group">
+                        <label>Bot</label>
+                        <div class="select-wrapper">
+                            <select class="filter-select">
+                                <option>All Bots</option>
+                                <option>Customer Support</option>
+                                <option>Sales Assistant</option>
+                                <option>HR Assistant</option>
+                                <option>Marketing Bot</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Channel</label>
+                        <div class="select-wrapper">
+                            <select class="filter-select">
+                                <option>All Channels</option>
+                                <option>Website</option>
+                                <option>Slack</option>
+                                <option>Mobile App</option>
+                                <option>Zendesk</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Metric</label>
+                        <div class="select-wrapper">
+                            <select class="filter-select">
+                                <option>Response Time</option>
+                                <option>User Satisfaction</option>
+                                <option>Conversation Volume</option>
+                                <option>Resolution Rate</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <button class="filter-reset">
+                        <i class="fa-solid fa-rotate"></i>
+                        <span>Reset</span>
+                    </button>
+                </div>
+                
+                <div class="report-summary">
+                    <div class="summary-card">
+                        <h4>Total Conversations</h4>
+                        <div class="summary-value">
+                            <span class="value">12,485</span>
+                            <span class="change positive">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                18.2%
+                            </span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <h4>Avg. Response Time</h4>
+                        <div class="summary-value">
+                            <span class="value">1.2s</span>
+                            <span class="change negative">
+                                <i class="fa-solid fa-arrow-down"></i>
+                                0.3s
+                            </span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <h4>Resolution Rate</h4>
+                        <div class="summary-value">
+                            <span class="value">92.4%</span>
+                            <span class="change positive">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                3.7%
+                            </span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <h4>User Satisfaction</h4>
+                        <div class="summary-value">
+                            <span class="value">4.8/5</span>
+                            <span class="change positive">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                0.2
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-chart-container">
+                    <div class="chart-header">
+                        <h3>Response Time Trends</h3>
+                        <div class="chart-actions">
+                            <button class="chart-action-btn active">Day</button>
+                            <button class="chart-action-btn">Week</button>
+                            <button class="chart-action-btn">Month</button>
+                        </div>
+                    </div>
+                    <div class="chart-body">
+                        <div class="placeholder-chart" id="responseTimeChart">
+                            <div class="chart-placeholder">
+                                <div class="line-chart-placeholder"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-grid">
+                    <div class="report-card">
+                        <div class="card-header">
+                            <h3>Conversations by Channel</h3>
+                            <button class="card-action-btn">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="placeholder-chart" id="channelChart">
+                                <div class="chart-placeholder">
+                                    <div class="donut-chart-placeholder"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="card-header">
+                            <h3>Conversations by Time</h3>
+                            <button class="card-action-btn">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="placeholder-chart" id="timeChart">
+                                <div class="chart-placeholder">
+                                    <div class="bar-chart-placeholder"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="card-header">
+                            <h3>Top Topics</h3>
+                            <button class="card-action-btn">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="topic-list">
+                                <div class="topic-item">
+                                    <div class="topic-name">Product Features</div>
+                                    <div class="topic-bar-container">
+                                        <div class="topic-bar" style="width: 75%;"></div>
+                                        <span class="topic-percentage">37.5%</span>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">Pricing Questions</div>
+                                    <div class="topic-bar-container">
+                                        <div class="topic-bar" style="width: 60%;"></div>
+                                        <span class="topic-percentage">28.4%</span>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">Account Issues</div>
+                                    <div class="topic-bar-container">
+                                        <div class="topic-bar" style="width: 45%;"></div>
+                                        <span class="topic-percentage">15.2%</span>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">Integration Help</div>
+                                    <div class="topic-bar-container">
+                                        <div class="topic-bar" style="width: 30%;"></div>
+                                        <span class="topic-percentage">12.7%</span>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">Other</div>
+                                    <div class="topic-bar-container">
+                                        <div class="topic-bar" style="width: 15%;"></div>
+                                        <span class="topic-percentage">6.2%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="card-header">
+                            <h3>Bot Performance</h3>
+                            <button class="card-action-btn">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <table class="performance-table">
+                                <thead>
+                                    <tr>
+                                        <th>Bot Name</th>
+                                        <th>Conversations</th>
+                                        <th>Resolution</th>
+                                        <th>Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Customer Support</td>
+                                        <td>4,822</td>
+                                        <td>95.3%</td>
+                                        <td>4.8/5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sales Assistant</td>
+                                        <td>3,157</td>
+                                        <td>88.6%</td>
+                                        <td>4.7/5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HR Assistant</td>
+                                        <td>945</td>
+                                        <td>97.1%</td>
+                                        <td>4.9/5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marketing Bot</td>
+                                        <td>2,654</td>
+                                        <td>89.2%</td>
+                                        <td>4.6/5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scheduling Bot</td>
+                                        <td>1,842</td>
+                                        <td>98.7%</td>
+                                        <td>4.9/5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script src="js/common.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/reports.js"></script>
+</body>
+</html>
