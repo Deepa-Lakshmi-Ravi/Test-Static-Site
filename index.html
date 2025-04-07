@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextAdmin Static Clone</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafb;
+            color: #111827;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: white;
+            border-right: 1px solid #e5e7eb;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        
+        .logo img {
+            height: 32px;
+            margin-right: 12px;
+        }
+        
+        .logo h1 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .nav-menu {
+            flex-grow: 1;
+        }
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            color: #6b7280;
+            text-decoration: none;
+        }
+        
+        .nav-item.active {
+            background-color: #f3f4f6;
+            color: #111827;
+            font-weight: 500;
+        }
+        
+        .nav-item:hover:not(.active) {
+            background-color: #f9fafb;
+        }
+        
+        .nav-item i {
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .sidebar-footer {
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-weight: 600;
+        }
+        
+        .user-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .user-info p {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            margin-left: 280px;
+            padding: 32px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        
+        .page-title h2 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .page-title p {
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-bar {
+            position: relative;
+            margin-right: 16px;
+        }
+        
+        .search-bar input {
+            padding: 8px 12px 8px 36px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            width: 240px;
+            font-size: 14px;
+        }
+        
+        .search-bar i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+        }
+        
+        .notification-btn, .settings-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            margin-left: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+        }
+        
+        /* Dashboard Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .stat-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .stat-card-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+        
+        .stat-card-title {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .stat-card-value {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .stat-card-change {
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .stat-card-change.positive {
+            color: #10b981;
+        }
+        
+        .stat-card-change.negative {
+            color: #ef4444;
+        }
+        
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+        
+        .chart-card, .recent-orders {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .card-actions {
+            display: flex;
+        }
+        
+        .card-action-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: #f3f4f6;
+            color: #4b5563;
+            font-size: 14px;
+            margin-left: 8px;
+            border: none;
+        }
+        
+        .chart-placeholder {
+            height: 300px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+        }
+        
+        /* Recent Orders Table */
+        .orders-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .orders-table th {
+            text-align: left;
+            padding: 12px 0;
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 500;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .orders-table td {
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 14px;
+        }
+        
+        .order-status {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .status-completed {
+            background: #ecfdf5;
+            color: #10b981;
+        }
+        
+        .status-pending {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .status-cancelled {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+        
+        /* Right Sidebar Cards */
+        .right-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .top-products {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .product-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .product-item:last-child {
+            border-bottom: none;
+        }
+        
+        .product-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            background: #e5e7eb;
+            margin-right: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+        }
+        
+        .product-info h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .product-info p {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        .product-sales {
+            margin-left: auto;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        /* Schedule Card */
+        .schedule-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .event-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .event-item:last-child {
+            border-bottom: none;
+        }
+        
+        .event-time {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+        
+        .event-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        
+        .event-description {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        /* Icons (using Unicode as placeholder) */
+        .icon-dashboard::before { content: "📊"; }
+        .icon-orders::before { content: "🛒"; }
+        .icon-products::before { content: "📦"; }
+        .icon-customers::before { content: "👥"; }
+        .icon-analytics::before { content: "📈"; }
+        .icon-discount::before { content: "💲"; }
+        .icon-settings::before { content: "⚙️"; }
+        .icon-search::before { content: "🔍"; }
+        .icon-notification::before { content: "🔔"; }
+        .icon-settings::before { content: "⚙️"; }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://demo.nextadmin.co/nextadmin.svg" alt="NextAdmin Logo">
+            <h1>NextAdmin</h1>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="#" class="nav-item active">
+                <i class="icon-dashboard"></i>
+                Dashboard
+            </a>
+            <a href="#" class="nav-item">
+                <i class="icon-orders"></i>
+                Orders
+            </a>
+            <a href="#" class="nav-item">
+                <i class="icon-products"></i>
+                Products
+            </a>
+            <a href="#" class="nav-item">
+                <i class="icon-customers"></i>
+                Customers
+            </a>
+            <a href="#" class="nav-item">
+                <i class="icon-analytics"></i>
+                Analytics
+            </a>
+            <a href="#" class="nav-item">
+                <i class="icon-discount"></i>
+                Discounts
+            </a>
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar">JD</div>
+                <div class="user-info">
+                    <h4>John Doe</h4>
+                    <p>Admin</p>
+                </div>
+                <i class="icon-settings" style="margin-left: auto;"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="page-title">
+                <h2>Dashboard</h2>
+                <p>Welcome back, John! 👋</p>
+            </div>
+            
+            <div class="header-actions">
+                <div class="search-bar">
+                    <i class="icon-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <button class="notification-btn">
+                    <i class="icon-notification"></i>
+                </button>
+                <button class="settings-btn">
+                    <i class="icon-settings"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div class="stat-card-title">Total Revenue</div>
+                    <i class="icon-analytics"></i>
+                </div>
+                <div class="stat-card-value">$45,231</div>
+                <div class="stat-card-change positive">
+                    +12% from last month
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div class="stat-card-title">Total Orders</div>
+                    <i class="icon-orders"></i>
+                </div>
+                <div class="stat-card-value">1,234</div>
+                <div class="stat-card-change positive">
+                    +8% from last month
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div class="stat-card-title">New Customers</div>
+                    <i class="icon-customers"></i>
+                </div>
+                <div class="stat-card-value">324</div>
+                <div class="stat-card-change positive">
+                    +5% from last month
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div class="stat-card-title">Active Products</div>
+                    <i class="icon-products"></i>
+                </div>
+                <div class="stat-card-value">56</div>
+                <div class="stat-card-change negative">
+                    -2% from last month
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div class="left-column">
+                <div class="chart-card">
+                    <div class="card-header">
+                        <div class="card-title">Sales Overview</div>
+                        <div class="card-actions">
+                            <button class="card-action-btn">Week</button>
+                            <button class="card-action-btn">Month</button>
+                            <button class="card-action-btn" style="background: #111827; color: white;">Year</button>
+                        </div>
+                    </div>
+                    <div class="chart-placeholder">
+                        Sales Chart Placeholder
+                    </div>
+                </div>
+                
+                <div class="recent-orders" style="margin-top: 24px;">
+                    <div class="card-header">
+                        <div class="card-title">Recent Orders</div>
+                        <button class="card-action-btn">View All</button>
+                    </div>
+                    
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#3210</td>
+                                <td>Olivia Martin</td>
+                                <td>Feb 12, 2023</td>
+                                <td>$42.25</td>
+                                <td><span class="order-status status-completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#3209</td>
+                                <td>Ava Johnson</td>
+                                <td>Feb 11, 2023</td>
+                                <td>$74.99</td>
+                                <td><span class="order-status status-pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>#3208</td>
+                                <td>Michael Smith</td>
+                                <td>Feb 10, 2023</td>
+                                <td>$64.75</td>
+                                <td><span class="order-status status-completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#3207</td>
+                                <td>Lisa Anderson</td>
+                                <td>Feb 09, 2023</td>
+                                <td>$34.50</td>
+                                <td><span class="order-status status-cancelled">Cancelled</span></td>
+                            </tr>
+                            <tr>
+                                <td>#3206</td>
+                                <td>David Wilson</td>
+                                <td>Feb 08, 2023</td>
+                                <td>$88.00</td>
+                                <td><span class="order-status status-completed">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="right-cards">
+                <div class="top-products">
+                    <div class="card-header">
+                        <div class="card-title">Top Products</div>
+                        <button class="card-action-btn">View All</button>
+                    </div>
+                    
+                    <div class="product-item">
+                        <div class="product-img">📱</div>
+                        <div class="product-info">
+                            <h4>iPhone 14 Pro</h4>
+                            <p>Electronics</p>
+                        </div>
+                        <div class="product-sales">$12,345</div>
+                    </div>
+                    
+                    <div class="product-item">
+                        <div class="product-img">👕</div>
+                        <div class="product-info">
+                            <h4>Cotton T-Shirt</h4>
+                            <p>Fashion</p>
+                        </div>
+                        <div class="product-sales">$8,765</div>
+                    </div>
+                    
+                    <div class="product-item">
+                        <div class="product-img">💻</div>
+                        <div class="product-info">
+                            <h4>MacBook Air</h4>
+                            <p>Electronics</p>
+                        </div>
+                        <div class="product-sales">$7,890</div>
+                    </div>
+                    
+                    <div class="product-item">
+                        <div class="product-img">👟</div>
+                        <div class="product-info">
+                            <h4>Running Shoes</h4>
+                            <p>Sports</p>
+                        </div>
+                        <div class="product-sales">$6,543</div>
+                    </div>
+                </div>
+                
+                <div class="schedule-card">
+                    <div class="card-header">
+                        <div class="card-title">Today's Schedule</div>
+                        <button class="card-action-btn">View All</button>
+                    </div>
+                    
+                    <div class="event-item">
+                        <div class="event-time">10:00 AM - 11:00 AM</div>
+                        <div class="event-title">Team Meeting</div>
+                        <div class="event-description">Weekly team sync</div>
+                    </div>
+                    
+                    <div class="event-item">
+                        <div class="event-time">2:00 PM - 3:00 PM</div>
+                        <div class="event-title">Client Call</div>
+                        <div class="event-description">Discuss new project requirements</div>
+                    </div>
+                    
+                    <div class="event-item">
+                        <div class="event-time">4:30 PM - 5:30 PM</div>
+                        <div class="event-title">Product Review</div>
+                        <div class="event-description">Q1 product roadmap</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
