@@ -1,0 +1,392 @@
+.content-area {
+    flex: 1;
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+}
+
+/* Hero Banner Enhancement */
+.hero-banner {
+    background: linear-gradient(135deg, #044a87, #0077cc, #009ffb);
+    color: white;
+    padding: 50px 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 119, 204, 0.2);
+}
+
+.hero-banner h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-banner p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    opacity: 0.9;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100'%3E%3Cpath fill='rgba(255,255,255,0.15)' d='M0 0 L100 0 L100 100 L0 100 Z'%3E%3C/path%3E%3Cpath fill='rgba(255,255,255,0.08)' d='M20 20 L80 20 L80 80 L20 80 Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 150px;
+    background-repeat: repeat;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+/* Stats Section Enhancement */
+.stats-section {
+    background-color: #f0f7ff;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 119, 204, 0.1);
+}
+
+.stats-section h2 {
+    color: #333;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.stats-section h2:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #044a87, #0077cc);
+}
+
+.stats-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.stat-item {
+    background-color: white;
+    border-radius: 10px;
+    border-left: 5px solid #0077cc;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0077cc;
+    margin-bottom: 8px;
+}
+
+/* Manufacturing Card Enhancement */
+.manufacturing-card {
+    border: none;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.manufacturing-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.manufacturing-card h2 {
+    color: #044a87;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.manufacturing-card h3 {
+    color: #0077cc;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.manufacturing-card p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.manufacturing-card ul {
+    padding-left: 20px;
+}
+
+.manufacturing-card ul li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 5px;
+    color: #444;
+}
+
+.manufacturing-card a {
+    display: inline-block;
+    color: #0077cc;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 15px;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.manufacturing-card a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0077cc;
+    transition: width 0.3s ease;
+}
+
+.manufacturing-card a:hover {
+    color: #044a87;
+}
+
+.manufacturing-card a:hover:after {
+    width: 100%;
+}
+
+/* Solution Grid Enhancement */
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Process Flow Enhancement */
+.process-flow {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.process-flow::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    right: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #e0e0e0, #0077cc, #e0e0e0);
+    z-index: 1;
+    border-radius: 2px;
+}
+
+.process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 120px;
+    position: relative;
+    z-index: 2;
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #044a87, #0077cc);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 119, 204, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover .step-icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 119, 204, 0.4);
+}
+
+.process-step div:not(.step-icon) {
+    font-weight: 600;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* CTA Section Enhancement */
+.cta-section {
+    background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    margin: 50px 0 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cta-section h2 {
+    color: #044a87;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.cta-section p {
+    color: #555;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #0077cc, #044a87);
+    color: white;
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 119, 204, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 119, 204, 0.4);
+    background: linear-gradient(135deg, #044a87, #0077cc);
+    color: white;
+}
+
+/* Table Enhancement */
+.table-container {
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    border: none;
+    padding: 15px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f0f7ff;
+    color: #044a87;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+table tr {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+table tr:hover {
+    background-color: #f0f7ff;
+}
+
+table td {
+    color: #444;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .process-flow {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .process-flow::before {
+        display: none;
+    }
+    
+    .stats-flex {
+        justify-content: center;
+    }
+    
+    .stat-item {
+        min-width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 30px 20px;
+    }
+    
+    .hero-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .solution-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-flex {
+        flex-direction: column;
+    }
+    
+    .manufacturing-card {
+        padding: 20px;
+    }
+    
+    .cta-section {
+        padding: 30px 20px;
+    }
+}

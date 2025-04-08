@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - NextAdmin</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/rag.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="main-container">
+        <!-- Sidebar Component -->
+        <div id="sidebar-container"></div>
+
+        <div class="content-wrapper">
+            <!-- Header Component -->
+            <div id="header-container"></div>
+            <main class="content-area">
+                <div class="rag-container">
+                    <div class="hero-section">
+                        <h1>Manufacturing Knowledge Retrieval</h1>
+                        <p>Our advanced RAG (Retrieval-Augmented Generation) system provides your team with instant access to manufacturing expertise, equipment documentation, and process knowledge.</p>
+                    </div>
+                    
+                    <div class="search-section">
+                        <h2>Search Manufacturing Knowledge Base</h2>
+                        <p>Ask any question about manufacturing processes, equipment maintenance, quality control, or compliance requirements.</p>
+                        
+                        <div class="search-bar">
+                            <input type="text" class="search-input" placeholder="E.g., 'How to calibrate the CNC milling machine model X200?'" value="What is the maintenance schedule for the hydraulic press HP-5000?">
+                            <button class="search-button">Search</button>
+                        </div>
+                        
+                        <div class="results-area">
+                            <div class="result-item">
+                                <div class="result-title">Hydraulic Press HP-5000 Maintenance Guide</div>
+                                <p>The <span class="result-highlight">HP-5000 hydraulic press</span> requires <span class="result-highlight">maintenance</span> every 500 operating hours or quarterly, whichever comes first. The <span class="result-highlight">schedule</span> includes checking fluid levels, inspecting seals, testing pressure relief valves, and lubricating moving components.</p>
+                                <div class="result-metadata">
+                                    <span>Source: Equipment Manual</span>
+                                    <span>Confidence: 98%</span>
+                                    <span>Last Updated: 2 months ago</span>
+                                </div>
+                            </div>
+                            
+                            <div class="result-item">
+                                <div class="result-title">Preventive Maintenance SOP - Hydraulic Systems</div>
+                                <p>Standard Operating Procedure for all <span class="result-highlight">hydraulic</span> equipment including <span class="result-highlight">HP-5000</span> series. Monthly checks include hydraulic fluid analysis. The comprehensive <span class="result-highlight">maintenance schedule</span> recommends full system overhaul every 5000 hours.</p>
+                                <div class="result-metadata">
+                                    <span>Source: Manufacturing SOP Database</span>
+                                    <span>Confidence: 92%</span>
+                                    <span>Last Updated: 6 months ago</span>
+                                </div>
+                            </div>
+                            
+                            <div class="result-item">
+                                <div class="result-title">Troubleshooting Hydraulic Press Performance Issues</div>
+                                <p>If the <span class="result-highlight">HP-5000</span> shows reduced pressure or operational issues between <span class="result-highlight">scheduled maintenance</span>, perform emergency checks on the pump system and pressure valves.</p>
+                                <div class="result-metadata">
+                                    <span>Source: Equipment Troubleshooting Guide</span>
+                                    <span>Confidence: 87%</span>
+                                    <span>Last Updated: 1 year ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Why Manufacturing RAG?</h2>
+                    <div class="grid-section">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <h3>Reduce Downtime</h3>
+                            <p>Access maintenance procedures instantly to minimize equipment downtime. No more waiting for technical support or searching through manuals.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon>
+                                    <line x1="3" y1="22" x2="21" y2="22"></line>
+                                </svg>
+                            </div>
+                            <h3>Knowledge Retention</h3>
+                            <p>Capture expertise from veteran employees and make it available to your entire workforce, preserving critical manufacturing knowledge.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <h3>Consistent Quality</h3>
+                            <p>Ensure all operators follow the same optimized procedures by providing consistent, accurate information across all shifts.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                            <h3>Global Access</h3>
+                            <p>Make your manufacturing knowledge accessible across all facilities worldwide, ensuring standardized operations regardless of location.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-diagram">
+                        <h2>How Manufacturing RAG Works</h2>
+                        <div class="workflow-steps">
+                            <div class="workflow-step">
+                                <div class="step-circle">1</div>
+                                <h3>Information Ingestion</h3>
+                                <p>System imports manuals, SOPs, troubleshooting guides, and expert knowledge</p>
+                            </div>
+                            
+                            <div class="workflow-step">
+                                <div class="step-circle">2</div>
+                                <h3>Semantic Indexing</h3>
+                                <p>AI processes and indexes manufacturing-specific content</p>
+                            </div>
+                            
+                            <div class="workflow-step">
+                                <div class="step-circle">3</div>
+                                <h3>Query Processing</h3>
+                                <p>User questions are analyzed for manufacturing context</p>
+                            </div>
+                            
+                            <div class="workflow-step">
+                                <div class="step-circle">4</div>
+                                <h3>Relevant Retrieval</h3>
+                                <p>System finds the most relevant information from your knowledge base</p>
+                            </div>
+                            
+                            <div class="workflow-step">
+                                <div class="step-circle">5</div>
+                                <h3>Answer Generation</h3>
+                                <p>Clear, actionable answers with source citations</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card use-cases">
+                        <h2>Manufacturing RAG Use Cases</h2>
+                        
+                        <div class="use-case-item">
+                            <div class="use-case-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
+                            </div>
+                            <div class="use-case-content">
+                                <h3>Equipment Maintenance & Troubleshooting</h3>
+                                <p>Technicians can access precise maintenance procedures, troubleshooting steps, and part information for specific equipment models. When a machine breaks down, RAG provides immediate answers based on maintenance manuals, past repair records, and best practices.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="use-case-item">
+                            <div class="use-case-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div class="use-case-content">
+                                <h3>Quality Control & Compliance</h3>
+                                <p>Quality teams can quickly access specific test procedures, acceptance criteria, and compliance requirements. When quality issues arise, RAG can retrieve relevant historical cases, root cause analyses, and corrective actions that worked in the past.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="use-case-item">
+                            <div class="use-case-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <div class="use-case-content">
+                                <h3>New Employee Training</h3>
+                                <p>Accelerate onboarding by giving new employees immediate access to manufacturing knowledge. New hires can ask questions about processes, equipment, and procedures to quickly become productive. The system adapts to different experience levels, providing basic or advanced information as needed.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="use-case-item">
+                            <div class="use-case-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <div class="use-case-content">
+                                <h3>Process Optimization</h3>
+                                <p>Engineers can access historical performance data, previous optimization efforts, and cross-facility benchmarks. When seeking to improve a process, RAG can provide insights from similar processes, successful strategies, and lessons learned from past optimizations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <h2>Transform Your Manufacturing Knowledge Management</h2>
+                        <p>Implement our RAG solution to give your manufacturing team instant access to critical knowledge and expertise.</p>
+                        <a href="contact.html" class="cta-button">Request a Demo</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <script>
+            // Function to include HTML files
+            function include(filename) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', filename, false);
+                xhr.send();
+                return xhr.responseText;
+            }
+            
+            // Example code to link your header and sidebar
+            // Uncomment and modify as needed:
+            /*
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById("header-placeholder").innerHTML = include("your-header-file.html");
+                document.getElementById("sidebar-placeholder").innerHTML = include("your-sidebar-file.html");
+            });
+            */
+            
+            // Simple script to simulate search results
+            document.addEventListener("DOMContentLoaded", function() {
+                const searchButton = document.querySelector('.search-button');
+                const searchInput = document.querySelector('.search-input');
+                const resultsArea = document.querySelector('.results-area');
+                
+                // Initial results are already visible for the demo
+                
+                searchButton.addEventListener('click', function() {
+                    // This would typically make an API call to your RAG backend
+                    // For demo purposes, we're just showing the existing results
+                    resultsArea.style.display = 'block';
+                    
+                    // Add animation to make it feel interactive
+                    resultsArea.style.opacity = '0';
+                    setTimeout(() => {
+                        resultsArea.style.transition = 'opacity 0.5s';
+                        resultsArea.style.opacity = '1';
+                    }, 100);
+                });
+            });
+        </script>
+    
+    <script src="js/common.js"></script>
+</body>
+</html>

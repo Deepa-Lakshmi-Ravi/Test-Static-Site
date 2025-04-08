@@ -3,183 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextAdmin - Integrations</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/integrations.css">
+    <title>Dashboard - NextAdmin</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/integration.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="app-container">
+    <div class="main-container">
         <!-- Sidebar Component -->
-        <div id="sidebarContainer"></div>
-        
+        <div id="sidebar-container"></div>
+
         <div class="content-wrapper">
             <!-- Header Component -->
-            <div id="headerContainer"></div>
-            
-            <main class="main-content">
-                <div class="page-header">
-                    <h1>Integrations</h1>
-                    <div class="page-actions">
-                        <button class="action-btn">
-                            <i class="fa-solid fa-filter"></i>
-                            <span>Filter</span>
-                        </button>
-                        <button class="action-btn primary">
-                            <i class="fa-solid fa-plus"></i>
-                            <span>Add Integration</span>
-                        </button>
+            <div id="header-container"></div>
+            <main class="content-area">
+                <div class="hero-banner">
+                    <h1>Manufacturing Excellence</h1>
+                    <p>Transforming production with smart technology and innovative solutions for the modern factory</p>
+                </div>
+                
+                <div class="stats-section">
+                    <h2>Manufacturing Industry Insights</h2>
+                    <div class="stats-flex">
+                        <div class="stat-item">
+                            <div class="stat-value">37%</div>
+                            <div>Productivity Increase</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">₹8.3T</div>
+                            <div>Industry Value</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">68%</div>
+                            <div>Digital Adoption</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">42%</div>
+                            <div>Cost Reduction</div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="integration-categories">
-                    <button class="category-btn active">All</button>
-                    <button class="category-btn">Communication</button>
-                    <button class="category-btn">Analytics</button>
-                    <button class="category-btn">CRM</button>
-                    <button class="category-btn">E-commerce</button>
-                    <button class="category-btn">APIs</button>
+                <div class="manufacturing-card">
+                    <h2>Smart Manufacturing Solutions</h2>
+                    <p>Our comprehensive suite of technologies transforms traditional factories into modern, efficient production facilities. Implement Industry 4.0 technologies to optimize operations, reduce downtime, and improve quality control.</p>
+                    
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <div class="step-icon">1</div>
+                            <div>Assessment</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon">2</div>
+                            <div>Planning</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon">3</div>
+                            <div>Implementation</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon">4</div>
+                            <div>Optimization</div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="integrations-grid">
-                    <div class="integration-card connected">
-                        <div class="integration-logo">
-                            <img src="images/slack-logo.png" alt="Slack">
-                        </div>
-                        <div class="integration-info">
-                            <h3>Slack</h3>
-                            <p>Connect your AI bots to Slack channels</p>
-                            <div class="integration-status">
-                                <span class="status-indicator"></span>
-                                <span class="status-text">Connected</span>
-                            </div>
-                        </div>
-                        <div class="integration-actions">
-                            <button class="integration-btn">Configure</button>
-                        </div>
+                <h2>Manufacturing Solutions</h2>
+                <div class="solution-grid">
+                    <div class="manufacturing-card">
+                        <h3>Automation Systems</h3>
+                        <p>Streamline production processes with advanced robotics and automated assembly lines.</p>
+                        <ul>
+                            <li>Robotic Process Automation</li>
+                            <li>Conveyor Systems</li>
+                            <li>Automated Quality Control</li>
+                            <li>Packaging Automation</li>
+                        </ul>
+                        <a href="automation.html">Learn More</a>
                     </div>
                     
-                    <div class="integration-card connected">
-                        <div class="integration-logo">
-                            <img src="images/zendesk-logo.png" alt="Zendesk">
-                        </div>
-                        <div class="integration-info">
-                            <h3>Zendesk</h3>
-                            <p>Integrate with your customer support platform</p>
-                            <div class="integration-status">
-                                <span class="status-indicator"></span>
-                                <span class="status-text">Connected</span>
-                            </div>
-                        </div>
-                        <div class="integration-actions">
-                            <button class="integration-btn">Configure</button>
-                        </div>
+                    <div class="manufacturing-card">
+                        <h3>IoT Production Monitoring</h3>
+                        <p>Real-time monitoring solutions to track efficiency and identify optimization opportunities.</p>
+                        <ul>
+                            <li>Equipment Sensors</li>
+                            <li>Production Analytics</li>
+                            <li>Predictive Maintenance</li>
+                            <li>Energy Consumption Tracking</li>
+                        </ul>
+                        <a href="iot-monitoring.html">Learn More</a>
                     </div>
                     
-                    <div class="integration-card">
-                        <div class="integration-logo">
-                            <img src="images/salesforce-logo.png" alt="Salesforce">
-                        </div>
-                        <div class="integration-info">
-                            <h3>Salesforce</h3>
-                            <p>Connect your bots with your CRM system</p>
-                            <div class="integration-status not-connected">
-                                <span class="status-text">Not Connected</span>
-                            </div>
-                        </div>
-                        <div class="integration-actions">
-                            <button class="integration-btn primary">Connect</button>
-                        </div>
+                    <div class="manufacturing-card">
+                        <h3>Supply Chain Management</h3>
+                        <p>Optimize inventory and streamline logistics for just-in-time manufacturing.</p>
+                        <ul>
+                            <li>Inventory Optimization</li>
+                            <li>Supplier Integration</li>
+                            <li>Distribution Planning</li>
+                            <li>Material Requirements Planning</li>
+                        </ul>
+                        <a href="supply-chain.html">Learn More</a>
                     </div>
                     
-                    <div class="integration-card">
-                        <div class="integration-logo">
-                            <img src="images/shopify-logo.png" alt="Shopify">
-                        </div>
-                        <div class="integration-info">
-                            <h3>Shopify</h3>
-                            <p>Enhance your e-commerce store with AI</p>
-                            <div class="integration-status not-connected">
-                                <span class="status-text">Not Connected</span>
-                            </div>
-                        </div>
-                        <div class="integration-actions">
-                            <button class="integration-btn primary">Connect</button>
-                        </div>
+                    <div class="manufacturing-card">
+                        <h3>Quality Management</h3>
+                        <p>Comprehensive quality control systems to ensure product excellence.</p>
+                        <ul>
+                            <li>Inspection Automation</li>
+                            <li>Defect Detection</li>
+                            <li>Statistical Process Control</li>
+                            <li>Compliance Management</li>
+                        </ul>
+                        <a href="quality-management.html">Learn More</a>
                     </div>
-                    
-                    <div class="integration-card">
-                        <div class="integration-logo">
-                            <img src="images/ga-logo.png" alt="Google Analytics">
-                        </div>
-                        <div class="integration-info">
-                            <h3>Google Analytics</h3>
-                            <p>Track AI bot performance with analytics</p>
-                            <div class="integration-status not-connected">
-                                <span class="status-text">Not Connected</span>
-                            </div>
-                        </div>
-                        <div class="integration-actions">
-                            <button class="integration-btn primary">Connect</button>
-                        </div>
+                </div>
+                
+                <div class="manufacturing-card">
+                    <h2>Manufacturing Case Studies</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Solution Implemented</th>
+                                    <th>Results</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Auto Parts Ltd.</td>
+                                    <td>IoT Production Monitoring</td>
+                                    <td>35% reduction in downtime, 28% increase in output</td>
+                                </tr>
+                                <tr>
+                                    <td>Precision Engineering Co.</td>
+                                    <td>Quality Management System</td>
+                                    <td>Defect rate reduced from 3.2% to 0.4%</td>
+                                </tr>
+                                <tr>
+                                    <td>Textile Innovations</td>
+                                    <td>Supply Chain Optimization</td>
+                                    <td>Inventory costs reduced by 42%, lead time cut by 65%</td>
+                                </tr>
+                                <tr>
+                                    <td>Food Processing Inc.</td>
+                                    <td>Automation Systems</td>
+                                    <td>Production capacity increased by 87% with same staffing</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    
-                    <div class="integration-card connected">
-                        <div class="integration-logo">
-                            <img src="images/intercom-logo.png" alt="Intercom">
-                        </div>
-                        <div class="integration-info">
-                            <h3>Intercom</h3>
-                            <p>Add AI capabilities to your live chat</p>
-                            <div class="integration-status">
-                                <span class="status-indicator"></span>
-                                <span class="status-text">Connected</span>
-                            </div>
-                        </div>
-                        <div class="integration-actions">
-                            <button class="integration-btn">Configure</button>
-                        </div>
-                    </div>
-                    
-                    <div class="integration-card">
-                        <div class="integration-logo">
-                            <img src="images/hubspot-logo.png" alt="HubSpot">
-                        </div>
-                        <div class="integration-info">
-                            <h3>HubSpot</h3>
-                            <p>Connect with your marketing automation</p>
-                            <div class="integration-status not-connected">
-                                <span class="status-text">Not Connected</span>
-                            </div>
-                        </div>
-                        <div class="integration-actions">
-                            <button class="integration-btn primary">Connect</button>
-                        </div>
-                    </div>
-                    
-                    <div class="integration-card">
-                        <div class="integration-logo">
-                            <img src="images/zapier-logo.png" alt="Zapier">
-                        </div>
-                        <div class="integration-info">
-                            <h3>Zapier</h3>
-                            <p>Connect with 3,000+ apps and automate workflows</p>
-                            <div class="integration-status not-connected">
-                                <span class="status-text">Not Connected</span>
-                            </div>
-                        </div>
-                        <div class="integration-actions">
-                            <button class="integration-btn primary">Connect</button>
-                        </div>
-                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h2>Ready to Transform Your Manufacturing Operations?</h2>
+                    <p>Our experts can help you implement the right solutions for your specific manufacturing needs.</p>
+                    <a href="contact.html" class="cta-button">Request a Consultation</a>
                 </div>
             </main>
         </div>
-    </div>
+        
+        <script>
+            // Function to include HTML files
+            function include(filename) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', filename, false);
+                xhr.send();
+                return xhr.responseText;
+            }
+            
+            // Example code to link your header and sidebar
+            // Uncomment and modify as needed:
+            /*
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById("header-placeholder").innerHTML = include("your-header-file.html");
+                document.getElementById("sidebar-placeholder").innerHTML = include("your-sidebar-file.html");
+            });
+            */
     
+            </script>
+        
+
+
+
     <script src="js/common.js"></script>
-    <script src="js/layout.js"></script>
-    <script src="js/integrations.js"></script>
 </body>
 </html>
